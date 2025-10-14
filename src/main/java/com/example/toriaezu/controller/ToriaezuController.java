@@ -1,4 +1,4 @@
-package toriaezu.controller;
+package com.example.toriaezu.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
