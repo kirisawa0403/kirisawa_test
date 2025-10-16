@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
 <title>Insert title here</title>
-<link rel="stylesheet" href="static/css/main.css" type="text/css">
-<script src="static/js/calendar.js"></script>
+<link th:href="@{/css/main.css}" rel="stylesheet">
 </head>
 <body>
-    
-    <h1>hello</h1>
-    <div id='calendar'></div>
+    <form class="inputform">
+        <h1>入力フォーム</h1>   
+        <p>予定名<input type="text"></p>
+        <p>日付<input type="date"></p>
+        <p>名前<input type="text"></p>
+        <p>詳細<input type="text"></p>
+        
+        <p>登録<input type="submit"></p>
+    </form>
+    <div class="maincont">
+        <div id='calendar'></div>
+    </div>
 
 </body>
 </html>

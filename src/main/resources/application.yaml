@@ -1,31 +1,4 @@
-spring:
-  
-  #データベースの設定
-  
-  datasource:
-      driver-class-name: org/postgresql.Driver
-      url: 
-      username: 
-      password: 
-  jpa:
-      open-in-view : true
-      hibernate:
-        ddl-auto: update
-      properties:
-        hidernate:
-         packagesToScan : com.example.demo.model.entity
-  thymeleaf:
-      cache: false
-
-      #Flywayの設定
-      
-      flyway:
-        enabled : true
-        locations : classpath:db/migration
-        baseline-on-migrate : true
-        validate-on-migrate : false
-        clean-disabled: false
-        
+spring:      
   logging :
     level:
      org:
