@@ -17,16 +17,17 @@
 <title>Insert title here</title>
 <link th:href="@{/css/main.css}" rel="stylesheet">
 </head>
-<body>
-    <form class="inputform">
-        <h1>入力フォーム</h1>   
-        <p>予定名<input type="text"></p>
-        <p>日付<input type="date"></p>
-        <p>名前<input type="text"></p>
-        <p>詳細<input type="text"></p>
-        
-        <p>登録<input type="submit"></p>
-    </form>
+<body>  
+    <form class="inputform" th:action="@{/input}" method="post" th:object="${inputTest}">
+          <p>入力フォーム</p>
+
+          <p>予定名：<input type="text" th:field="*{title}"></p>
+          <p>日付：<input type="date" th:field="*{date}"></p>
+          <p>名前：<input type="text" th:field="*{name}"></p>
+          <p>詳細：<input type="text" th:field="*{detail}"></p>
+
+          <p><input type="submit" value="登録"></p>
+      </form>
     <div class="maincont">
         <div id='calendar'></div>
     </div>

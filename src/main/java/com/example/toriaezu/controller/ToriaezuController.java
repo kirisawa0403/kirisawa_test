@@ -1,13 +1,29 @@
 package com.example.toriaezu.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.toriaezu.model.TestDTO; // ← TestDTO のパスに合わせて変更してください
 
 @Controller
 public class ToriaezuController {
-	@GetMapping("/")
-	public String index() {
-		return "index";
-	}
-}
 
+    // 初期表示（GET）
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("test", "テスト表示");
+        model.addAttribute("inputData", null);
+        return "index";
+    }
+
+    // フォーム送信（POST）
+    @PostMapping("/input")
+    public String inputSample(@ModelAttribute("inputTest") TestDTO inputData, Model model) {
+        model.addAttribute("test", "テスト表示");
+        model.addAttribute("inputData", inputData.getName());
+        return "index";
+    }
+}
