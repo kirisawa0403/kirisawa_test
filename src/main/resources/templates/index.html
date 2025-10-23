@@ -12,13 +12,28 @@
         });
         calendar.render();
       });
+      
+      /*<![CDATA[*/
+          var events = [
+              /*[[${events}]]*/
+          ];
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+              initialView: 'dayGridMonth',
+              events: events.map(e => ({
+                  title: e.title,
+                  start: e.date
+              }))
+          });
+          calendar.render();
+          /*]]>*/
 
     </script>
 <title>Insert title here</title>
 <link th:href="@{/css/main.css}" rel="stylesheet">
 </head>
 <body>  
-    <form class="inputform" th:action="@{/input}" method="post" th:object="${inputTest}">
+    <form class="inputform" th:action="@{/input}" th:method="post" th:object="${inputTest}">
           <p>入力フォーム</p>
 
           <p>予定名：<input type="text" th:field="*{title}"></p>
