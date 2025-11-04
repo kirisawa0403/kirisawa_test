@@ -13,16 +13,16 @@ body {
 
 /* 入力フォーム全体（枠・影・背景を削除） */
 .inputform {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 0;
-  border: none;          /* 枠線削除 */
-  border-radius: 0;      /* 角丸削除 */
-  background: transparent; /* 背景透明 */
-  box-shadow: none;      /* 影削除 */
-  width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 100px;
+    border: none;          /* 枠線削除 */
+    border-radius: 0;      /* 角丸削除 */
+    background: transparent; /* 背景透明 */
+    box-shadow: none;      /* 影削除 */
+    width: 400px;
 }
 
 /* 各 <p> の余白もスッキリ */
